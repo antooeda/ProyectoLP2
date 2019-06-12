@@ -63,7 +63,7 @@ public class Usuario implements Serializable {
     private Integer sexo;
     @Column(name = "estatura")
     private Integer estatura;
-    @Column(name = "porcentaje _grasa")
+    @Column(name = "porcentaje_grasa")
     private Integer porcentajeGrasa;
     @Column(name = "porcentaje_musculo")
     private Integer porcentajeMusculo;
@@ -255,5 +255,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "cl.ufro.lp2.proyecto.demo.modelo.Usuario[ idUsuario=" + idUsuario + " ]";
     }
-    
+
 }
