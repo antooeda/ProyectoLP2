@@ -12,7 +12,19 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div> JAJAJAJAJAJ
+        
 
+        <h1 th:text="${dato}"></h1>
 
+        <form action="#" th:action="@{/crearSucurusalForm}" th:object="${sucursal}" method="POST">
+          
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre Sucursal</label>
+                <input th:field="*{nombre}" type="text" class="form-control" placeholder="ingrese nombre">
+                
+            </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </body>
 </html>
