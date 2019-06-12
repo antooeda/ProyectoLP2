@@ -19,7 +19,7 @@ public class UsuarioController {
     @RequestMapping("/url")
     public String page(Model model) {
         model.addAttribute("attribute", "value");
-        return "view.name";
+        return "CrearUsuario";
     }
     
 }
