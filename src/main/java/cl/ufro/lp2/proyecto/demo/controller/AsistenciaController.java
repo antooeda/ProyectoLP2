@@ -7,6 +7,7 @@ package cl.ufro.lp2.proyecto.demo.controller;
 
 import cl.ufro.lp2.proyecto.demo.dao.AsistenciaDao;
 import cl.ufro.lp2.proyecto.demo.modelo.Asistencia;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,17 +23,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AsistenciaController {
     
-    @RequestMapping("/url")
-    public String page(Model model) {
-        model.addAttribute("attribute", "value");
-        return "view.name";
-    }
+    
     @Autowired
     private AsistenciaDao aDAO;
     
     @GetMapping("/inscripcion")
     public String inscripcion(Model model) {
-        model.addAttribute("asistencia", new Asistencia());
+       // List<Asistencia> listaDesplegar =  aDAO.findAll();
+        
+       // model.addAttribute("listita", listaDesplegar);
+       
         return "inscripcion";
     }
     
