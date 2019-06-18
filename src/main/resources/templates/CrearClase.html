@@ -2,15 +2,15 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>SUCURSAL</title>
-    <!-- Required meta tags -->
+     Required meta tags 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
-    <!-- Bootstrap CSS -->
+     Bootstrap CSS 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="proyecto.css">
 </head>
-  <body>
+  <body bgcolor="blue">
      
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
          
@@ -33,8 +33,8 @@
                                 Mas...
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="comic.html">MI PERFIL</a>
-                                <a class="dropdown-item" href="series.html">PAGO</a>
+                                <a class="dropdown-item" href="#">MI PERFIL</a>
+                                <a class="dropdown-item" href="#">PAGO</a>
                                 
                               </div>
                             </li>
@@ -46,25 +46,28 @@
                    
 
                 <div>
-                    <h1>INGRESE SU CIUDAD</h1>
+                    <h1>INGRESE EL NOMBRE DE</h1>
                 </div> 
                 
         
-                <h1 th:text="${dato}"> </h1>
-        
-                <form action="#" th:action="@{/crearSucurusalForm}" th:object="${sucursal}" method="POST">
+                <h1 th:text="${datos}"> </h1>
+                <form action="#" th:action="@{/crearClaseForm}" th:object="${clase}" method="POST">
                   
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Nombre Sucursal</label>
-                        <input th:field="*{nombre}" type="text" class="form-control" placeholder="ingrese nombre">
-                        
+                        <label for="exampleInputEmail1">Nombre Clase</label>
+                        <input th:field="*{nombreClase}" type="text" class="form-control" placeholder="Ingrese nombre">
+                        <label for="exampleInputEmail3">Cantidad maxima alumnos</label>
+                        <input th:field="*{cantMaxalumnos}" type="text" class="form-control" placeholder="Ingrese cantidad maxima alumnos">
+                        <label for="exampleInputEmail1">Nombre Instructor</label>
+                        <input th:field="*{Instructor}" type="text" class="form-control" placeholder="Ingrese nombre instructor">
                     </div>
                   
                   <button type="submit" class="btn btn-dark">Enviar</button>
                 </form>
-           
+               
+             
       
-    <!-- Optional JavaScript -->
+      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

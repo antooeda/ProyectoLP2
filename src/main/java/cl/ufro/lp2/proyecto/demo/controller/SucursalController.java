@@ -29,7 +29,7 @@ public class SucursalController {
     
     @GetMapping("/crearSucursal")
     public String crearSucursal(Model model){
-        model.addAttribute("dato", "ddfggf");
+        model.addAttribute("dato", "ciudad");
         model.addAttribute("sucursal", new Sucursal());
         return "crearSucursal";
     }
