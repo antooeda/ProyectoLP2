@@ -7,7 +7,9 @@ package cl.ufro.lp2.proyecto.demo.controller;
 
 import cl.ufro.lp2.proyecto.demo.dao.SucursalDao;
 import cl.ufro.lp2.proyecto.demo.modelo.Sucursal;
+import java.io.IOException;
 import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +29,7 @@ public class SucursalController {
     @Autowired
     private SucursalDao sDAO;
     
-    @GetMapping("/crearSucursal")
+    @GetMapping("/Sucursal")
     public String crearSucursal(Model model){
         model.addAttribute("dato", "ciudad");
         model.addAttribute("sucursal", new Sucursal());
@@ -35,12 +37,12 @@ public class SucursalController {
     }
     
      @PostMapping("/crearSucurusalForm")
-    public String obtenerSucursal(@ModelAttribute Sucursal sucursal){
+    public void obtenerSucursal(@ModelAttribute Sucursal sucursal, HttpServletResponse response) throws IOException{
         
         //System.out.println(sucursal.getNombre());
         
         sDAO.save(sucursal);
-        return "index";
+        response.sendRedirect("obtenerSucursales");
     }
     
     
@@ -54,4 +56,25 @@ public class SucursalController {
         
         return "sucursales";
     }
+    
+       @GetMapping("/SucursalTemuco")
+    public String SucursalTemuco(Model model){
+         //model.addAttribute("dato", "Temuco");
+         //model.addAttribute("sucursal", new Sucursal());
+        return "SucursalTemuco";
+    }
+    
+      @GetMapping("/SucursalConcepcion")
+    public String SucursalConce(Model model){
+         // model.addAttribute("dato", "Temuco");
+         //model.addAttribute("sucursal", new Sucursal());
+        return "SucursalConcepcion";
+    }
+      @GetMapping("/SucursalSantiago")
+    public String SucursalSantiago(Model model){
+          //model.addAttribute("dato", "Temuco");
+          //model.addAttribute("sucursal", new Sucursal());
+        return "SucursalSantiago";
+    }
 }
+

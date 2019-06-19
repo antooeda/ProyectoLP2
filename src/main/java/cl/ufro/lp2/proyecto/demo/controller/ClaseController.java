@@ -39,7 +39,7 @@ public class ClaseController {
         //System.out.println(sucursal.getNombre());
         clase.getCantMaxalumnos();
         cDAO.save(clase);
-        return "index";
+        return "SucursalConcepcion";
     }
     
     
