@@ -26,13 +26,14 @@ public class ClaseController {
     @Autowired
     private ClaseDao cDAO;
     
-    @GetMapping("/crearClase")
+    @GetMapping("/Clases")
     public String crearClase(Model model){
-        model.addAttribute("datos", "clase");
-        model.addAttribute("clase", new Clase());
-        return "crearClase";
+        List<Clase>clases= cDAO.findAll();
+        model.addAttribute("listaClases", clases);
+        return "Clases";
     }
     
+
      @PostMapping("/crearClaseForm")
     public String obtenerClase(@ModelAttribute Clase clase){
         

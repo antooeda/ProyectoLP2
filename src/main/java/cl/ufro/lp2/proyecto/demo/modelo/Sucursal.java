@@ -32,10 +32,16 @@ import javax.validation.constraints.Size;
 public class Sucursal implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @Size(max = 45)
+    @Column(name = "direccion")
+    private String direccion;
+    @Size(max = 255)
+    @Column(name = "url_imagen")
+    private String urlImagen;
     @Size(max = 255)
     @Column(name = "nombre")
     private String nombre;
-    @Id
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idSucursal")
@@ -64,6 +70,21 @@ public class Sucursal implements Serializable {
 
     public void setIdSucursal(Integer idSucursal) {
         this.idSucursal = idSucursal;
+    }
+     public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public List<Usuario> getUsuarioList() {

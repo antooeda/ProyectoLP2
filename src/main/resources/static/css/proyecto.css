@@ -6,6 +6,12 @@ h1{
     font-family: fantasy;
     font-size: 100px;
 }
+h4{
+    font-family: auto;
+}
+h6{
+    font-family: fantasy; 
+}
 .encabezado{
     background-color: white;
     

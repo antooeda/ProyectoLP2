@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -31,9 +32,9 @@ public class SucursalController {
     
     @GetMapping("/Sucursal")
     public String crearSucursal(Model model){
-        model.addAttribute("dato", "ciudad");
-        model.addAttribute("sucursal", new Sucursal());
-        return "crearSucursal";
+       List<Sucursal>sucursales= sDAO.findAll();
+        model.addAttribute("listaSucursales", sucursales);
+        return "Sucursales";
     }
     
      @PostMapping("/crearSucurusalForm")
@@ -75,6 +76,19 @@ public class SucursalController {
           //model.addAttribute("dato", "Temuco");
           //model.addAttribute("sucursal", new Sucursal());
         return "SucursalSantiago";
+    }
+    
+     @GetMapping("/Sucursal/{id}")
+    public String cargarSucursal(Model model, @PathVariable(value="id") Integer id){
+          //model.addAttribute("dato", "Temuco");
+          //model.addAttribute("sucursal", new Sucursal());
+          
+          
+          Sucursal aDesplegar = sDAO.findById(id.intValue());
+          
+          model.addAttribute("sucursal", aDesplegar);
+      
+        return "sucursalTemplate";
     }
 }
 

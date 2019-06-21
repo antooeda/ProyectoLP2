@@ -18,4 +18,9 @@ public interface SucursalDao extends CrudRepository<Sucursal, Integer> {
     @Override
     public List<Sucursal> findAll();
     
+    
+    public Sucursal findById(int id);
+    
+    public List<Sucursal> findByNombre(String nombre);
+    
 }
