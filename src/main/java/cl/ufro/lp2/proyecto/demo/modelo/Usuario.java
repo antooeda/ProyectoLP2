@@ -6,7 +6,7 @@
 package cl.ufro.lp2.proyecto.demo.modelo;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -52,13 +52,12 @@ public class Usuario implements Serializable {
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "fecha_nacimiento")
-    @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
     @Size(max = 255)
     @Column(name = "apellido")
     private String apellido;
     @Column(name = "rut")
-    private Integer rut;
+    private String rut;
     @Column(name = "sexo")
     private Integer sexo;
     @Column(name = "estatura")
@@ -135,11 +134,11 @@ public class Usuario implements Serializable {
         this.apellido = apellido;
     }
 
-    public Integer getRut() {
+    public String getRut() {
         return rut;
     }
 
-    public void setRut(Integer rut) {
+    public void setRut(String rut) {
         this.rut = rut;
     }
 

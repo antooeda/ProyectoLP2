@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="/css/proyecto.css">  
   </head>
     <body>
-      <h1 th:text="${datosss}"></h1>
+      <h1 th:text="${sucursales.getNombre()}"></h1>
 
       <form action="#" th:action="@{/crearUsuarioForm}" th:object="${usuario}" method="POST">
                   <div class="form-row">
                     <div class="col-md-4 mb-4">
+
                       <label for="validationCustom01">Nombre:</label>
                       <input th:field="*{nombre}" type="text" class="form-control" placeholder="ingrese nombre">
                       <div class="valid-feedback">
@@ -53,7 +54,7 @@
                     </div>
                     <div class="col-md-2 mb-2">
                       <label for="validationCustom04">Fecha de Nacimiento:</label>
-                      <input th:field="*{fechaNacimiento}" type="text" class="form-control" placeholder="ingrese fecha de nacimiento">
+                      <input th:field="*{fechaNacimiento}" type="date" class="form-control" placeholder="ingrese fecha de nacimiento">
                       <div class="invalid-feedback">
                         Please provide a valid state.
                       </div>
@@ -73,17 +74,15 @@
                           </div>
                         </div>
                   </div>
-                 
-  
+
                       </label>
                     </div>
                   </div>
                       
-  
+                  <h1></h1>
+                  <center>
                   <button class="btn btn-primary" type="submit">Guardar</button>
-                 
-                  
-                  
+                </center>
                 </form>
                 
                 <script>

@@ -7,6 +7,7 @@ package cl.ufro.lp2.proyecto.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class FichaController {
-    
+    @GetMapping("/reservarHora")
+    public String Hora(Model model){
+        model.addAttribute("dato", "nombre de Cada Sucursal");
+        return "reservarHora";
+    }
     
  
     

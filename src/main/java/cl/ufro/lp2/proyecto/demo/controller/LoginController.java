@@ -25,10 +25,22 @@ public class LoginController {
     
     @GetMapping("/loginUsuario")
     public String ingresarLogin(Model model){
-        model.addAttribute("dato", "nombre");
-        model.addAttribute("usuario", new Usuario());
+        model.addAttribute("dato", "nombre de Cada Sucursal");
         return "login";
     }
+    
+    @GetMapping("/Contacto")
+    public String verContacto(Model model){
+        model.addAttribute("dato", "nombre de Cada Sucursal");
+        return "Contacto";
+    }
+    @GetMapping("/Pago")
+    public String pagar(Model model){
+        model.addAttribute("dato", "nombre de Cada Sucursal");
+        return "Pago";
+    }
+    
+    
     
      @PostMapping("/loginUsuarioForm")
     public String loginForm(@ModelAttribute Usuario usuario){
