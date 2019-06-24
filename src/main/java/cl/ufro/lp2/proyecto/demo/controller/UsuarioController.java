@@ -29,7 +29,7 @@ public class UsuarioController {
     public String crearUsuario(Model model){
         //model.addAttribute("datosss", "Usuario");
         model.addAttribute("usuario", new Usuario());
-        return "CrearUsuario";
+        return "Formulario";
     }
     
      @PostMapping("/crearUsuarioForm")
