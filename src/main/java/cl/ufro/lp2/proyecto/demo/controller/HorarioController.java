@@ -27,7 +27,7 @@ public class HorarioController {
       @Autowired
     private HorarioDao hDAO;
     
-    @GetMapping("/crearHorario")
+    @GetMapping("/Horario")
     public String crearHorario(Model model){
         model.addAttribute("datoos", "horario");
         model.addAttribute("horario", new Horario());

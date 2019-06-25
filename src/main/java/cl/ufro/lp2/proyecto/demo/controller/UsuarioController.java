@@ -50,4 +50,6 @@ public class UsuarioController {
         model.addAttribute("usuarios", usuarios);
         return "usuarios";
     }
+    
+  
 }
