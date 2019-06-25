@@ -41,6 +41,9 @@ public class Clase implements Serializable {
     @Column(name = "idClase")
     private Integer idClase;
     @Size(max = 255)
+    @Column(name = "url_imagen")
+    private String urlImagen;
+    @Size(max = 255)
     @Column(name = "nombreClase")
     private String nombreClase;
     @Column(name = "cantMax_alumnos")
@@ -70,6 +73,15 @@ public class Clase implements Serializable {
     public void setIdClase(Integer idClase) {
         this.idClase = idClase;
     }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+    
 
     public String getNombreClase() {
         return nombreClase;

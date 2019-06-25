@@ -22,10 +22,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link"  href="Sucursal">SUCURSALES<span class="sr-only">(current)</span></a>
+            <a class="nav-link"  href="/Sucursal">Sucursales<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">PLANES</a>
+            <a class="nav-link" href="#">Planes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="/Clases">Clases Grupales</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -33,8 +36,8 @@
               Mas...
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="Clases">CLASES</a>
-              <a class="dropdown-item" href="#">INGRESAR</a>
+              <a class="dropdown-item" href="/loginUsuario">Ingresar</a>
+              <a class="dropdown-item" href="/Contacto">Contacto</a>
               
             </div>
           </li>
@@ -45,30 +48,11 @@
                    <div>
                      <h1>Clases Grupales</h1>
                    </div>
-                   <div class="card-group">
-                   <div class="card">
-                    <img src="/img/TRX.jpg" class="card-img-top"   alt="...">
-                      </div>
-                      <div class="card">
-                          <img src="/img/BodyCombat.jpg" class="card-img-top"   alt="...">
-                            </div>
-                  <div class="card">
-                    <img src="/img/hit.jpg" class="card-img-top"  alt="...">
-                     </div>
-                   
-                  
-                  <div class="card">
-                      <img src="/img/funcional.jpg" class="card-img-top"   alt="...">
-                      </div>
-                    
-                    
-                    <div class="card">
-                        <img src="/img/Zumba.jpg" class="card-img-top"  alt="...">
-                       </div>
+              
                  
-                      <div class="card-group">
+                   <div class="card-deck">
                           <div class="card" style="width: 18rem;" th:each="c:${listaClases}">
-                            
+                            <img th:src=${c.getUrlImagen()} class="card-img-top" alt="...">
                             <div class="card-body">
                               <h4 class="card-title" th:text="${c.getNombreClase()}"></h4>
                               <h6>-Cantidad maxima alumnos:</h6>
@@ -79,7 +63,7 @@
                             
                           </div>    
                         </div>
-                      </div>
+                      
                       <br>
                       <br>
                    
