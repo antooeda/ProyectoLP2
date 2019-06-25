@@ -1,6 +1,5 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en"></html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
   <head>
     <title>Formulario</title>
     <!-- Required meta tags -->
@@ -14,24 +13,24 @@
   <body>
         
 <!-- multistep form -->
-<form id="msform">
-          <li>FORMULARIO DE INGRESO NUEVOS USUARIOS</li>
+<form id="msform" action="#" th:action="@{/crearUsuario}" th:object="${usuario}" method="POST">
+            <li>FORMULARIO DE INGRESO NUEVOS USUARIOS</li>
         </ul>
         <!-- fieldsets -->
         <fieldset>
           <h2 class="fs-title">Crear Nuevo Usuario</h2>
           <h3 class="fs-subtitle">Datos Personales</h3>
-          <input type="text" name="id" placeholder="Id Usuario" />
-          <input type="text" name="nombre" placeholder="Nombre" />
-          <input type="text" name="apellido" placeholder="Apellido" />
-          <input type="date" name="fnac" placeholder="Fecha de Nacimiento" />
-          <input type="text" name="rut" placeholder="Rut" />
-          <input type="text" name="sexo" placeholder="Sexo" />
-          <input type="text" name="estatura" placeholder="Estatura" />
-          <input type="text" name="grasa" placeholder="% de Grasa" />
-          <input type="text" name="musculo" placeholder="% de Músculo" />
-          <input type="text" name="tipo" placeholder="Tipo de Usuario" />
-          <input type="text" name="sucursal" placeholder="ID Sucursal" />
+          <input th:field="*{idUsuario}" type="text" name="id" placeholder="Id Usuario" />
+          <input th:field="*{nombre}" type="text" name="nombre" placeholder="Nombre" />
+          <input th:field="*{apellido}" type="text" name="apellido" placeholder="Apellido" />
+          <input th:field="*{fechaNacimiento}" type="date" name="fnac" placeholder="Fecha de Nacimiento" />
+          <input th:field="*{rut}" type="text" name="rut" placeholder="Rut" />
+          <input th:field="*{sexo}" type="text" name="sexo" placeholder="Sexo" />
+          <input th:field="*{estatura} "type="text" name="estatura" placeholder="Estatura" />
+          <input th:field="*{porcentajeGrasa} "type="text" name="grasa" placeholder="% de Grasa" />
+          <input th:field="*{porcentajeMusculo} "type="text" name="musculo" placeholder="% de Músculo" />
+          <input th:field="*{tipo} "type="text" name="tipo" placeholder="Tipo de Usuario" />
+          <input th:field="*{idSucursal} "type="text" name="sucursal" placeholder="ID Sucursal" />
           <input type="submit" name="submit" class="submit action-button" value="Registrar" />
         </fieldset>
       </form>

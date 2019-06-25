@@ -32,12 +32,13 @@ public class UsuarioController {
         return "Formulario";
     }
     
-     @PostMapping("/crearUsuarioForm")
-    public String obtenerUsuario(@ModelAttribute Usuario usuario){
+
+     @PostMapping("/crearUsuario")
+    public String guardarUsuario(@ModelAttribute Usuario us){
         
         //System.out.println(sucursal.getNombre());
         
-        uDAO.save(usuario);
+        uDAO.save(us);
         return "index";
     }
     
