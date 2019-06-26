@@ -66,6 +66,12 @@ public class Usuario implements Serializable {
     private Integer porcentajeGrasa;
     @Column(name = "porcentaje_musculo")
     private Integer porcentajeMusculo;
+      @Size(max = 255)
+    @Column(name = "userName")
+    private String userName;
+        @Size(max = 255)
+    @Column(name = "contraseña")
+    private String contraseña;
     @ManyToMany(mappedBy = "usuarioList", fetch = FetchType.LAZY)
     private List<Plan> planList;
     @ManyToMany(mappedBy = "usuarioList", fetch = FetchType.LAZY)
@@ -204,6 +210,22 @@ public class Usuario implements Serializable {
 
     public void setFichaList(List<Ficha> fichaList) {
         this.fichaList = fichaList;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public List<Ficha> getFichaList1() {
