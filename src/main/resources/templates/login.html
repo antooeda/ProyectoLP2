@@ -45,6 +45,45 @@ and open the template in the editor.
                            <i class="fa fa-user-circle"></i>
                         </span>
                         <!--   user name Input-->
+
+                         <input class="form-input" id="txt-input" type="text" placeholder="@UserName" >
+                     
+                      <br>
+                     
+                           <!--   Password -->
+                     
+                      <span class="input-item">
+                        <i class="fa fa-key"></i>
+                       </span>
+                      <!--   Password Input-->
+                      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" >
+                     
+                <!--      Show/hide password  -->
+                     <span>
+                        <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
+                     </span>
+                     
+                     
+                      <br>
+                <!--        buttons -->
+                <!--      button LogIn -->
+                      <button class="log-in"> Ingresar! </button>
+                   </div>
+                  
+                <!--   other buttons -->
+                   <div class="other">
+                <!--      Forgot Password button-->
+                      <button class="btn submits frgt-pass">Olvidé mi Contraseña</button>
+                <!--     Sign Up button -->
+                      <a class="btn submits sign-up" href="/crearUsuario">Crear Nuevo Usuario 
+                <!--         Sign Up font icon -->v
+                    <!--  <i class="fa fa-user-plus" aria-hidden="true"></i> -->
+                      </a>
+                <!--      End Other the Division -->
+                   </div>
+                     
+                <!--   End Conrainer  -->
+
                         <input class="form-input" id="txt-input" type="text" placeholder="@UserName" th:field="*{userName}" required>
 
                         <br>
@@ -82,6 +121,7 @@ and open the template in the editor.
                      </div>
 
                      <!--   End Conrainer  -->
+
                   </div>
 
                   <!-- End Form -->
