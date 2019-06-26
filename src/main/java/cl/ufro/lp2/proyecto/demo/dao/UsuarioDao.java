@@ -7,6 +7,7 @@ package cl.ufro.lp2.proyecto.demo.dao;
 
 import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -17,5 +18,7 @@ public interface UsuarioDao extends CrudRepository<Usuario, Integer> {
 
     @Override
     public List<Usuario> findAll();
+    
+    public Optional<Usuario> findByUserName(String userName);
     
 }

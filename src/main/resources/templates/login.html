@@ -4,86 +4,92 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Iniciar Sesión</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/login.css">
-    </head>
-    <center>
-    <body>
-        
-       
-        
-             <div class="container">
-                    <div class="flat-form">
-        <div><h1>¡Bienvenido a Gimnasio UFRO!</h1></div>
-        <div class="overlay">
-                <!-- LOGN IN FORM by Omar Dsoky -->
-                <form>
-                   <!--   con = Container  for items in the form-->
-                   <div class="con">
-                   <!--     Start  header Content  -->
-                   <header class="head-form">
-                      <h2>Ingreso Usuarios</h2>
-                      <!--     A welcome message or an explanation of the login form -->
-                      <p>Ingrese aquí su Usuario y su Clave</p>
-                   </header>
-                   <!--     End  header Content  -->
-                   <br>
-                   <div class="field-set">
-                     
-                      <!--   user name -->
-                         <span class="input-item">
-                           <i class="fa fa-user-circle"></i>
-                         </span>
-                        <!--   user name Input-->
-                         <input class="form-input" id="txt-input" type="text" placeholder="@UserName" >
-                     
-                      <br>
-                     
-                           <!--   Password -->
-                     
-                      <span class="input-item">
-                        <i class="fa fa-key"></i>
-                       </span>
-                      <!--   Password Input-->
-                      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" >
-                     
-                <!--      Show/hide password  -->
-                     <span>
-                        <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
-                     </span>
-                     
-                     
-                      <br>
-                <!--        buttons -->
-                <!--      button LogIn -->
-                      <button class="log-in"> Ingresar! </button>
-                   </div>
-                  
-                <!--   other buttons -->
-                   <div class="other">
-                <!--      Forgot Password button-->
-                      <button class="btn submits frgt-pass">Olvidé mi Contraseña</button>
-                <!--     Sign Up button -->
-                      <a class="btn submits sign-up" href="/crearUsuario">Crear Nuevo Usuario 
-                <!--         Sign Up font icon -->
-                    <!--  <i class="fa fa-user-plus" aria-hidden="true"></i> -->
-                      </a>
-                <!--      End Other the Division -->
-                   </div>
-                     
-                <!--   End Conrainer  -->
-                  </div>
-                  
-                  <!-- End Form -->
-                </form>
-                </div>
-              </div>
+
+<head>
+   <title>Iniciar Sesión</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/login.css">
+</head>
+<center>
+
+   <body>
+
+
+
+      <div class="container">
+         <div class="flat-form">
+            <div>
+               <h1>¡Bienvenido a Gimnasio UFRO!</h1>
             </div>
-    </body>
+            <div class="overlay">
+               <!-- LOGN IN FORM by Omar Dsoky -->
+               <form th:action="@{/loginUsuarioForm}" th:object="${usuario}" method="POST">
+                  <!--   con = Container  for items in the form-->
+                  <div class="con">
+                     <!--     Start  header Content  -->
+                     <header class="head-form">
+                        <h2>Ingreso Usuarios</h2>
+                        <!--     A welcome message or an explanation of the login form -->
+                        <p>Ingrese aquí su Usuario y su Clave</p>
+                     </header>
+                     <!--     End  header Content  -->
+                     <br>
+                     <div class="field-set">
+
+                        <!--   user name -->
+                        <span class="input-item">
+                           <i class="fa fa-user-circle"></i>
+                        </span>
+                        <!--   user name Input-->
+                        <input class="form-input" id="txt-input" type="text" placeholder="@UserName" th:field="*{userName}" required>
+
+                        <br>
+
+                        <!--   Password -->
+
+                        <span class="input-item">
+                           <i class="fa fa-key"></i>
+                        </span>
+                        <!--   Password Input-->
+                        <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" th:field=*{contraseña} required>
+
+                        <!--      Show/hide password  -->
+                        <span>
+                           <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                        </span>
+
+
+                        <br>
+                        <!--        buttons -->
+                        <!--      button LogIn -->
+                        <button class="log-in"> Ingresar! </button>
+                     </div>
+
+                     <!--   other buttons -->
+                     <div class="other">
+                        <!--      Forgot Password button-->
+                        <button class="btn submits frgt-pass">Olvidé mi Contraseña</button>
+                        <!--     Sign Up button -->
+                        <a class="btn submits sign-up" href="/crearUsuario">Crear Nuevo Usuario
+                           <!--         Sign Up font icon -->
+                           <!--  <i class="fa fa-user-plus" aria-hidden="true"></i> -->
+                        </a>
+                        <!--      End Other the Division -->
+                     </div>
+
+                     <!--   End Conrainer  -->
+                  </div>
+
+                  <!-- End Form -->
+               </form>
+            </div>
+         </div>
+      </div>
+   </body>
 </center>
+
 </html>
