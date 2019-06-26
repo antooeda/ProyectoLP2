@@ -52,7 +52,7 @@ public class LoginController {
             }
         }
         
-        return "index";
+        return "Perfil";
     }
     
     

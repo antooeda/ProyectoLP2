@@ -6,6 +6,7 @@
 package cl.ufro.lp2.proyecto.demo.controller;
 
 import cl.ufro.lp2.proyecto.demo.dao.UsuarioDao;
+import cl.ufro.lp2.proyecto.demo.modelo.Sucursal;
 import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -49,6 +51,19 @@ public class UsuarioController {
         List<Usuario> usuarios = uDAO.findAll();
         model.addAttribute("usuarios", usuarios);
         return "usuarios";
+    }
+    
+     @GetMapping("/Perfil/{id}")
+    public String cargarSucursal(Model model, @PathVariable(value="id") Integer id){
+          //model.addAttribute("dato", "Temuco");
+          //model.addAttribute("sucursal", new Sucursal());
+          
+          
+          Sucursal aDesplegar = uDAO.findById(id.intValue());
+          
+          model.addAttribute("usuario", aDesplegar);
+      
+        return "sucursalTemplate";
     }
     
   
