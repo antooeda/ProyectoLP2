@@ -34,12 +34,6 @@ public class LoginController {
         model.addAttribute("dato", "nombre de Cada Sucursal");
         return "Contacto";
     }
-    @GetMapping("/Pago")
-    public String pagar(Model model){
-        model.addAttribute("dato", "nombre de Cada Sucursal");
-        return "Pago";
-    }
-    
     
     
      @PostMapping("/loginUsuarioForm")

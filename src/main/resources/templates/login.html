@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Iniciar Sesión</title>
@@ -14,7 +15,9 @@ and open the template in the editor.
     <center>
     <body>
         
-            <div class="container">
+       
+        
+             <div class="container">
                     <div class="flat-form">
         <div><h1>¡Bienvenido a Gimnasio UFRO!</h1></div>
         <div class="overlay">
@@ -37,7 +40,7 @@ and open the template in the editor.
                            <i class="fa fa-user-circle"></i>
                          </span>
                         <!--   user name Input-->
-                         <input class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
+                         <input class="form-input" id="txt-input" type="text" placeholder="@UserName" >
                      
                       <br>
                      
@@ -47,7 +50,7 @@ and open the template in the editor.
                         <i class="fa fa-key"></i>
                        </span>
                       <!--   Password Input-->
-                      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
+                      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" >
                      
                 <!--      Show/hide password  -->
                      <span>
@@ -66,10 +69,10 @@ and open the template in the editor.
                 <!--      Forgot Password button-->
                       <button class="btn submits frgt-pass">Olvidé mi Contraseña</button>
                 <!--     Sign Up button -->
-                      <button class="btn submits sign-up">Crear Nuevo Usuario 
+                      <a class="btn submits sign-up" href="/crearUsuario">Crear Nuevo Usuario 
                 <!--         Sign Up font icon -->
-                      <i class="fa fa-user-plus" aria-hidden="true"></i>
-                      </button>
+                    <!--  <i class="fa fa-user-plus" aria-hidden="true"></i> -->
+                      </a>
                 <!--      End Other the Division -->
                    </div>
                      
@@ -79,6 +82,8 @@ and open the template in the editor.
                   <!-- End Form -->
                 </form>
                 </div>
+              </div>
+            </div>
     </body>
 </center>
 </html>

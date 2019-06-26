@@ -8,40 +8,44 @@
    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/proyecto.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
   <body>
  
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
          
-                        <a class="navbar-brand" href="/">Inicio</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                      
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                              <a class="nav-link"  href="/Sucursal">SUCURSALES<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">PLANES</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Mas...
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="comic.html">MI PERFIL</a>
-                                <a class="dropdown-item" href="series.html">PAGO</a>
-                                
-                              </div>
-                            </li>
-                          </ul>
-                         
-                        </div>
-                      </nav> 
+          <a class="navbar-brand" href="/">Inicio</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link"  href="/Sucursal">Sucursales<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Planes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="/Clases">Clases Grupales</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Mas...
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/loginUsuario">Ingresar</a>
+                  <a class="dropdown-item" href="/reservarHora">Reservar Hora</a>
+                  <a class="dropdown-item" href="/Contacto">Contacto</a>
+                  
+                </div>
+              </li>
+            </ul>
+           
+          </div>
+        </nav>
                       <br>
                       <h1 th:text="${'Sede '+sucursal.getNombre()}"></h1>
                       <br>
@@ -54,12 +58,10 @@
                         <a class="navbar-brand" href="#">Planes</a>
                             </nav>
                       <!-- As a link -->
-                      <nav class="navbar navbar-light bg-light">
-                          <a class="navbar-brand" href="crearClase">Clases</a>
-                          </nav>
+                 
                        
                   <nav class="navbar navbar-light bg-light">
-                  <a class="navbar-brand" href="#">Ingresar</a>
+                  <a class="navbar-brand" href="/crearUsuario">Crear Nuevo Usuario</a>
                   </nav>
                  
                      
