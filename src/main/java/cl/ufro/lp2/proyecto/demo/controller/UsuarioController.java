@@ -62,6 +62,7 @@ public class UsuarioController {
           Sucursal aDesplegar = uDAO.findById(id.intValue());
           
           model.addAttribute("usuario", aDesplegar);
+          System.out.println("holaaaaa");
       
         return "sucursalTemplate";
     }
