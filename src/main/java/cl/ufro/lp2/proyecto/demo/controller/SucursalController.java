@@ -78,7 +78,8 @@ public class SucursalController {
         return "SucursalSantiago";
     }
     
-     @GetMapping("/Sucursal/{id}")
+     
+    @GetMapping("/Sucursal/{id}")
     public String cargarSucursal(Model model, @PathVariable(value="id") Integer id){
           //model.addAttribute("dato", "Temuco");
           //model.addAttribute("sucursal", new Sucursal());
