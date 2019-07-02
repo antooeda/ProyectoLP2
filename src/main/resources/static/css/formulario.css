@@ -15,10 +15,12 @@ html {
 
 body {
 	font-family: montserrat, arial, verdana;
+	background: 
+		linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
 }
 /*form styles*/
 #msform {
-	width: 400px;
+	width: 1000px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
