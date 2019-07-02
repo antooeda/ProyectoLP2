@@ -35,7 +35,7 @@ public class PlanController {
         return "Planes";
     }
     
-      @PostMapping("/crearPlnesForm")
+      @PostMapping("/crearPlanesForm")
     public void obtenerPlanes(@ModelAttribute Plan plan, HttpServletResponse response) throws IOException{
        pDao.save(plan);
         response.sendRedirect("obtenerPlanes");

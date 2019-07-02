@@ -44,7 +44,7 @@
                        <i class="fa fa-user-circle"></i>
                      </span>
                     <!--   user name Input-->
-                     <input th:field="*{userName}" class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
+                     <input th:field="*{userName}" class="form-input" id="txt-input" type="text" placeholder="@UserName" >
                  
                   <br>
                  
@@ -54,7 +54,7 @@
                     <i class="fa fa-key"></i>
                    </span>
                   <!--   Password Input-->
-                  <input th:field="*{contraseña}" class="form-input" type="password" placeholder="Contraseña" id="pwd"  name="password" required>
+                  <input th:field="*{contraseña}" class="form-input" type="password" placeholder="Contraseña" id="pwd"  name="password" >
                  
             <!--      Show/hide password  -->
                  <span>
@@ -73,10 +73,10 @@
             <!--      Forgot Password button-->
                   <button class="btn submits frgt-pass">Olvidé mi Contraseña</button>
             <!--     Sign Up button -->
-                  <button class="btn submits sign-up" href="crearUsuario">Crear Usuario 
+                  <a class="btn submits sign-up" href="crearUsuario">Crear Usuario 
             <!--         Sign Up font icon -->
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  </button>
+                  </a>
             <!--      End Other the Division -->
                </div>
                  

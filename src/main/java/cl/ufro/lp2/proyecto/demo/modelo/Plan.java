@@ -41,6 +41,9 @@ public class Plan implements Serializable {
     @Size(max = 255)
     @Column(name = "url_imagen")
     private String urlImagen;
+     @Size(max = 255)
+    @Column(name = "descripcion")
+    private String descripcion;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -91,6 +94,14 @@ public class Plan implements Serializable {
         this.urlImagen = urlImagen;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+   
     public List<Usuario> getUsuarioList() {
         return usuarioList;
     }
