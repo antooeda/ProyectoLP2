@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>SUCURSAL</title>
+    <title>PLANES</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
                 <a class="nav-link"  href="/Sucursal">Sucursales<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Planes">Planes</a>
+                <a class="nav-link" href="#">Planes</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link"  href="/Clases">Clases Grupales</a>
@@ -47,15 +47,15 @@
         </nav>
     
                      
-                  <h1>Nuestras sucursales:</h1>   
+                  <h1>Nuestros planes:</h1>   
                 <br>
                 <div class="card-deck">
-                      <div class="card" style="width: 30rem;" th:each="s:${listaSucursales}">
-                        <img th:src="${s.getUrlImagen()}"  class="card-img-top" alt="...">
+                      <div class="card" style="width: 30rem;" th:each="p:${listaPlanes}">
+                        <img th:src="${p.getUrlImagen()}"  class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title" th:text="${s.getNombre()}"></h5>
-                          <p class="card-text" th:text="${s.getDireccion()}"></p>
-                          <a href="sucursal" th:href="@{'Sucursal/'+ ${s.getIdSucursal()}}" class="btn btn-dark">Ir a Sucursal</a>
+                          <h5 class="card-title" th:text="${p.getNombre()}"></h5>
+                          <p class="card-text" th:text="${p.getValor() }"></p>
+                          <a href="plan" th:href="@{'Plan/'+ ${s.getIdPlan()}}" class="btn btn-dark">Ir a Plan</a>
                         </div>
                       </div>
                     </div>

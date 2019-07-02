@@ -38,6 +38,9 @@ public class Plan implements Serializable {
     private String nombrePlan;
     @Column(name = "valor")
     private Integer valor;
+    @Size(max = 255)
+    @Column(name = "url_imagen")
+    private String urlImagen;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -78,6 +81,14 @@ public class Plan implements Serializable {
 
     public void setIdPlan(Integer idPlan) {
         this.idPlan = idPlan;
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public List<Usuario> getUsuarioList() {
