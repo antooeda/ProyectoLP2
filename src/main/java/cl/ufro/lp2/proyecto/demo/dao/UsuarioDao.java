@@ -23,6 +23,6 @@ public interface UsuarioDao extends CrudRepository<Usuario, Integer> {
         public Sucursal findById(int id);
 
     
-    public Optional<Usuario> findByUserName(String userName);
+    public Usuario findByUserNameAndContraseña(String userName, String contraseña);
     
 }

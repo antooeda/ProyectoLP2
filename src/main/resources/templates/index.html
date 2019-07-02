@@ -53,12 +53,38 @@
             
             </li>
             
+            <nav class="navbar navbar-expand-lg navbar-light bg-bluesky">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                   
+                 <th:block th:unless="${session.usuarioLogueado==null}">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" th:text="'Mi Cuenta: '+${session.usuarioLogueado.getUserName()}" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Salir
+                    </a>
+                    <form action="logout" method="post">
+                      <input class="dropdown-item" type="submit" value="Terminar Sesión">
+                    </form>
+                  </li>
+                </th:block>
+                </ul>
+              </div>
+            </nav>
+
           </ul>
          
         </div>
-        <a class="btn submits sign-up" href="loginUsuario">INICIAR SESIÓN
-      <!--  <a class="btn submits sign-up" href="Pago">PAGAR -->
-        </a>
+        <th:block th:if="${session.usuarioLogueado==null}">
+                  <li class="nav-item">
+                    <a class="btn submits sign-up" href="loginUsuario">INICIAR SESIÓN
+                      <!--  <a class="btn submits sign-up" href="Pago">PAGAR -->
+                        </a>
+                  </li>
+                 </th:block>
+        
       </nav>
      <br>
      <center>
@@ -115,7 +141,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <center>
     <footer>
-        <h4>Datos Oficina Centrar Gimnasio Ufro</h4>
+        <h4>Datos Oficina Central Gimnasio Ufro</h4>
         <p>Teléfono: +56(2) 9180224</p>
         <p>Av. Los Leones 1745, Piso 2 oficina 13 
         <br> 7510838 Providencia<br>
