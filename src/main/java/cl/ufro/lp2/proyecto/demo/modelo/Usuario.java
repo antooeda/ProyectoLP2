@@ -48,6 +48,9 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_usuario")
     private Integer idUsuario;
+     @Size(max = 255)
+    @Column(name = "url_imagen")
+    private String urlImagen;
     @Size(max = 255)
     @Column(name = "nombre")
     private String nombre;
@@ -98,6 +101,14 @@ public class Usuario implements Serializable {
     public Usuario(Integer idUsuario, int tipo) {
         this.idUsuario = idUsuario;
         this.tipo = tipo;
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public int getTipo() {
