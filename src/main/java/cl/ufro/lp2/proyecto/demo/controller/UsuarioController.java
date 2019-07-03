@@ -53,19 +53,20 @@ public class UsuarioController {
         return "usuarios";
     }
     
-     @GetMapping("/Perfil/{id}")
-    public String cargarSucursal(Model model, @PathVariable(value="id") Integer id){
+     @GetMapping("/Perfil")
+    public String cargarSucursal(Model model, @ModelAttribute Usuario us){
           //model.addAttribute("dato", "Temuco");
           //model.addAttribute("sucursal", new Sucursal());
           
           
-          Sucursal aDesplegar = uDAO.findById(id.intValue());
+       Usuario pDesplegar = uDAO.findByUserNameAndContraseña(us.getUserName(), us.getContraseña());
           
-          model.addAttribute("usuario", aDesplegar);
-          System.out.println("holaaaaa");
+         model.addAttribute("usuario", pDesplegar);
+          //System.out.println("holaaaaa");
       
-        return "sucursalTemplate";
+        return "Perfil";
     }
+    
     
   
 }
