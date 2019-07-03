@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>PLANES</title>
+    <title>Plan</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
   <body>
+ 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
          
           <a class="navbar-brand" href="/">Inicio</a>
@@ -24,7 +25,7 @@
                 <a class="nav-link"  href="/Sucursal">Sucursales<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Planes">Planes</a>
+                <a class="nav-link" href="/Plan">Planes</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link"  href="/Clases">Clases Grupales</a>
@@ -45,24 +46,12 @@
            
           </div>
         </nav>
-    
-                     
-                  <h1>Nuestros planes:</h1>   
-                <br>
-                <div class="card-deck">
-                      <div class="card" style="width: 30rem;" th:each="p:${listaPlanes}">
-                        <img th:src="${p.getUrlImagen()}"  class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title" th:text="${p.getNombrePlan()}"></h5>
-                          <p class="card-text" th:text="${p.getValor() }"></p>
-                          <p class="card-text" th:text="${p.getDescripcion()}"></p>
-                          <a href="plan" th:href="@{'Planes/'+ ${p.getIdPlan()}}" class="btn btn-dark">Ir a Plan</a>
-                        </div>
-                      </div>
-                    </div>
-
-            
-                   
+                      <br>
+                      <h1 th:text="${plan.getNombrePlan()}"></h1>
+                      <br>
+               
+                           
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

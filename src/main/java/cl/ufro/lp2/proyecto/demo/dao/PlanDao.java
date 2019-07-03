@@ -18,7 +18,7 @@ public interface PlanDao extends CrudRepository<Plan, Integer> {
     @Override
     public List<Plan> findAll();
 
-    public Plan findById(int id);
+    public Plan findByIdPlan(int id);
     
     public List<Plan> findByNombrePlan(String nombre);
     

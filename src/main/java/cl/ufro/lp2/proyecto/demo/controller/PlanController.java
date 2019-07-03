@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,7 +33,7 @@ public class PlanController {
     public String crearPlan(Model model){
        List<Plan>planes= pDao.findAll();
         model.addAttribute("listaPlanes", planes);
-        return "Planes";
+        return "Plan";
     }
     
       @PostMapping("/crearPlanesForm")
@@ -46,5 +47,18 @@ public class PlanController {
       List<Plan> planes = pDao.findAll();
       model.addAttribute("planes", planes);
       return "planes";
+    }
+         
+    @GetMapping("/Plan/{id}")
+    public String cargarSucursal(Model model, @PathVariable(value="id") Integer id){
+          //model.addAttribute("dato", "Temuco");
+          //model.addAttribute("sucursal", new Sucursal());
+          
+          
+          Plan aDesplegar = pDao.findByIdPlan(id.intValue());
+          
+          model.addAttribute("plan", aDesplegar);
+      
+        return "planTemplate";
     }
 }
