@@ -7,8 +7,10 @@ package cl.ufro.lp2.proyecto.demo.controller;
 
 import cl.ufro.lp2.proyecto.demo.dao.PlanDao;
 import cl.ufro.lp2.proyecto.demo.modelo.Plan;
+import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,7 +52,7 @@ public class PlanController {
     }
          
     @GetMapping("/Plan/{id}")
-    public String cargarSucursal(Model model, @PathVariable(value="id") Integer id){
+    public String cargarPlan(Model model, @PathVariable(value="id") Integer id){
           //model.addAttribute("dato", "Temuco");
           //model.addAttribute("sucursal", new Sucursal());
           
@@ -61,4 +63,5 @@ public class PlanController {
       
         return "planTemplate";
     }
+  
 }

@@ -17,5 +17,5 @@ public interface PagoDao extends CrudRepository<Pago, Integer> {
 
     @Override
     public List<Pago> findAll();
-    
+   public List<Pago> findByIdUsuario(int IdUsuario);
 }

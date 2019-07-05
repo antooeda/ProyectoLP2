@@ -6,9 +6,12 @@
 package cl.ufro.lp2.proyecto.demo.controller;
 
 import cl.ufro.lp2.proyecto.demo.dao.SucursalDao;
+import cl.ufro.lp2.proyecto.demo.dao.UsuarioDao;
 import cl.ufro.lp2.proyecto.demo.modelo.Sucursal;
+import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +32,8 @@ public class SucursalController {
     
     @Autowired
     private SucursalDao sDAO;
+    @Autowired
+    private UsuarioDao uDAO;
     
     @GetMapping("/Sucursal")
     public String crearSucursal(Model model){
@@ -37,13 +42,11 @@ public class SucursalController {
         return "Sucursales";
     }
     
-     @PostMapping("/crearSucurusalForm")
-    public void obtenerSucursal(@ModelAttribute Sucursal sucursal, HttpServletResponse response) throws IOException{
-        
+     @PostMapping("/crearSucursal")
+    public void crearSucursal(@ModelAttribute Sucursal sucursal, HttpServletResponse response) throws IOException{
         //System.out.println(sucursal.getNombre());
-        
         sDAO.save(sucursal);
-        response.sendRedirect("obtenerSucursales");
+        response.sendRedirect("crearSucursal");
     }
     
     
@@ -57,26 +60,7 @@ public class SucursalController {
         
         return "sucursales";
     }
-    
-       @GetMapping("/SucursalTemuco")
-    public String SucursalTemuco(Model model){
-         //model.addAttribute("dato", "Temuco");
-         //model.addAttribute("sucursal", new Sucursal());
-        return "SucursalTemuco";
-    }
-    
-      @GetMapping("/SucursalConcepcion")
-    public String SucursalConce(Model model){
-         // model.addAttribute("dato", "Temuco");
-         //model.addAttribute("sucursal", new Sucursal());
-        return "SucursalConcepcion";
-    }
-      @GetMapping("/SucursalSantiago")
-    public String SucursalSantiago(Model model){
-          //model.addAttribute("dato", "Temuco");
-          //model.addAttribute("sucursal", new Sucursal());
-        return "SucursalSantiago";
-    }
+
     
      
     @GetMapping("/Sucursal/{id}")
@@ -91,5 +75,6 @@ public class SucursalController {
       
         return "sucursalTemplate";
     }
+    
 }
 

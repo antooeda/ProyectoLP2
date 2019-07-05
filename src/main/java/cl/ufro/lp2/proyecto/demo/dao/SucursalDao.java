@@ -22,5 +22,5 @@ public interface SucursalDao extends CrudRepository<Sucursal, Integer> {
     public Sucursal findById(int id);
     
     public List<Sucursal> findByNombre(String nombre);
-    
+   
 }

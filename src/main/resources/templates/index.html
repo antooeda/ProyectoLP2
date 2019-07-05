@@ -53,28 +53,7 @@
             
             </li>
             
-            <nav class="navbar navbar-expand-lg navbar-light bg-bluesky">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                   
-                 <th:block th:unless="${session.usuarioLogueado==null}">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" th:text="'Mi Cuenta: '+${session.usuarioLogueado.getUserName()}" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Salir
-                    </a>
-                    <form action="logout" method="post">
-                      <input class="dropdown-item" type="submit" value="Terminar Sesión">
-                      <input class="dropdown-item" type="submit" href="/Pago" value="Pagar">
-                      <input class="dropdown-item" type="submit" value="Terminar Sesión">
-                    </form>
-                  </li>
-                </th:block>
-                </ul>
-              </div>
-            </nav>
+        
 
           </ul>
          
@@ -88,7 +67,30 @@
                  </th:block>
         
       </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-bluesky">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+             
+           <th:block th:unless="${session.usuarioLogueado==null}">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" th:text="'Mi Cuenta: '+${session.usuarioLogueado.getUserName()}" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Salir
+              </a>
+              <form action="logout"  method="post">
+                <input class="dropdown-item" type="submit"  value="Terminar Sesión">
+                <input class="dropdown-item" type="submit" href="/Pago" value="Pagar">
+                
+              </form>
+            </li>
+          </th:block>
+          </ul>
+        </div>
+      </nav>
      <br>
+
      <center>
 
         <iframe width="760" height="515" src="https://www.youtube.com/embed/2WJp-GmhSsw?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -105,19 +107,19 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img  src="/img/gimansio.jpg" class="d-block w-100" alt="carruel gimansio">
+                  <img  src="/img/gimansio.jpg" class="d-block w-100" alt="carruel 1">
                   <div class="carousel-caption d-none d-md-block">
                   
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="/img/Gimnasio.jpg"  class="d-block w-100" alt="carrusel Gimnasio">
+                  <img src="/img/Gimnasio.jpg"  class="d-block w-100" alt="carrusel 1">
                   <div class="carousel-caption d-none d-md-block">
                    
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="/img/yoga gim.jpg" class="d-block w-100" alt="carrusel yoga">
+                  <img src="/img/yoga gim.jpg" class="d-block w-100" alt="carrusel 3">
                   <div class="carousel-caption d-none d-md-block">
                   
                   </div>

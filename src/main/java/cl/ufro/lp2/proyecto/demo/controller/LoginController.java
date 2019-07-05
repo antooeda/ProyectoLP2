@@ -27,11 +27,19 @@ public class LoginController {
     private UsuarioDao uDAO;
     private LoginDao lDAO;
     
+      
     @GetMapping("/loginUsuario")
-    public String mostrarLogin(Model model){
-        model.addAttribute("usuario", new Usuario());
-        return "login";
+    public String mostrarLogin(HttpServletRequest request,Model model){
+          Usuario usuarioLogueado = (Usuario) request.getSession().getAttribute("UsuarioLogueado");
+        if(usuarioLogueado==null){
+            model.addAttribute("usuario", new Usuario());
+            return "login";
+        }else{
+            return "index";
+        }
     }
+    
+  
     
     @GetMapping("/Contacto")
     public String verContacto(Model model){
@@ -42,13 +50,16 @@ public class LoginController {
     
      @PostMapping("/loginUsuario")
     public String login(Model model, @ModelAttribute Usuario us, HttpServletRequest request){
+        
         Usuario usuarioBd = uDAO.findByUserNameAndContraseña(us.getUserName(), us.getContraseña());
+        
         if(usuarioBd!=null){
             request.getSession().setAttribute("usuarioLogueado", usuarioBd);
             return "index";
         }else{
             model.addAttribute("usuario", new Usuario());
             model.addAttribute("error",true);
+            model.addAttribute("mensaje_error", "Usuario o Contraseña incorrectos. Intentalo de nuevo");
         return "login";
         }
     }
