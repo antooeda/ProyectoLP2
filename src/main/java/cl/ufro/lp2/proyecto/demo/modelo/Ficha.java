@@ -21,6 +21,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -39,14 +40,14 @@ public class Ficha implements Serializable {
     @Column(name = "idFicha")
     private Integer idFicha;
     @Column(name = "fecha")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date fecha;
     @Column(name = "fecha_proxControl")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date fechaproxControl;
-    @JoinColumn(name = "idCliente", referencedColumnName = "id_usuario")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Usuario idCliente;
+   
     @JoinColumn(name = "idUsuario", referencedColumnName = "id_usuario")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Usuario idUsuario;
@@ -80,14 +81,6 @@ public class Ficha implements Serializable {
 
     public void setFechaproxControl(Date fechaproxControl) {
         this.fechaproxControl = fechaproxControl;
-    }
-
-    public Usuario getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(Usuario idCliente) {
-        this.idCliente = idCliente;
     }
 
     public Usuario getIdUsuario() {

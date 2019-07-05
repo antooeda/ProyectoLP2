@@ -28,20 +28,12 @@
 
         <form th:action="@{/Pago}" th:object="${pago}" method="POST"> 
           <ul class="form-list">
-            <li class="form-list__row">
-              <label>ID Usuario</label>
-              <input th:field="*{idUsuario}" type="text" name="" required="" />
-            </li>
             <ul class="form-list">
                 <li class="form-list__row">
                   <label>Monto a pagar</label>
                   <input th:field="*{monto}" type="text" name="" required="" />
                 </li>
                 <ul class="form-list">
-                    <li class="form-list__row">
-                      <label>Número de Pago</label>
-                      <input th:field="*{codPago}" type="text" name="" required="" />
-                    </li>
             <li class="form-list__row">
               <label>número de Tarjeta</label>
               <div id="input--cc" class="creditcard-icon">

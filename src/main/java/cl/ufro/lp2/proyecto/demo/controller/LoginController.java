@@ -9,11 +9,13 @@ import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.util.List;
 import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
@@ -29,8 +31,8 @@ public class LoginController {
     
       
     @GetMapping("/loginUsuario")
-    public String mostrarLogin(HttpServletRequest request,Model model){
-          Usuario usuarioLogueado = (Usuario) request.getSession().getAttribute("UsuarioLogueado");
+    public String mostrarLogin(HttpServletRequest request,Model model, @ModelAttribute("usuario") Usuario usuarioLogueado){
+        
         if(usuarioLogueado==null){
             model.addAttribute("usuario", new Usuario());
             return "login";
@@ -38,6 +40,26 @@ public class LoginController {
             return "index";
         }
     }
+     @ModelAttribute("usuario")
+    public Usuario getUsuario(HttpServletRequest request) {
+        // Obtener la sesion
+        HttpSession sesion = request.getSession(false);
+       
+        // Si hay sesion
+        if (sesion != null) {
+            // Obtener objeto de usuario
+            Object objeto = sesion.getAttribute("usuarioLogueado");
+ 
+            // Si el objeto es de tipo UsuarioBase
+            if (objeto instanceof Usuario) {
+                return (Usuario) objeto;
+            }
+        }
+ 
+        // No hay objeto, retornar null
+        return null;
+    }
+    
     
   
     
@@ -49,9 +71,8 @@ public class LoginController {
     
     
      @PostMapping("/loginUsuario")
-    public String login(Model model, @ModelAttribute Usuario us, HttpServletRequest request){
-        
-        Usuario usuarioBd = uDAO.findByUserNameAndContraseña(us.getUserName(), us.getContraseña());
+    public String login(Model model, @ModelAttribute("userName")String userName, @ModelAttribute("contraseña")String contraseña, HttpServletRequest request){
+        Usuario usuarioBd = uDAO.findByUserNameAndContraseña(userName, contraseña);
         
         if(usuarioBd!=null){
             request.getSession().setAttribute("usuarioLogueado", usuarioBd);

@@ -49,13 +49,13 @@
           </div>
         </nav>
       <center>
-        <form name="formulario" method="post" action="http://pagina.com/send.php">
+        <form name="formulario" th:action="@{/reservarHora}" th:object="${ficha}" method="POST">
             <!-- Campo de entrada de fecha -->
             <h2>Reserva de Horas de Evaluación y Progreso</h2>
             <h1></h1>
            <h3> Selecciona la fecha deseada:</h3>
-            <input type="date" name="fecha" min="2020-03-25"
-                                            max="2020-05-25" step="2">
+            <input type="date" name="fecha" min="2019-03-01"
+                                            max="2020-12-31" step="2">
             <!-- Campo de entrada de hora -->
             <h3>Selecciona la hora deseada:</h3>
             <input type="time" name="hora" min="10:00"

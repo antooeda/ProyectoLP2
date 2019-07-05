@@ -81,8 +81,6 @@ public class Usuario implements Serializable {
     private List<Clase> claseList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario", fetch = FetchType.LAZY)
     private List<Asistencia> asistenciaList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente", fetch = FetchType.LAZY)
-    private List<Ficha> fichaList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario", fetch = FetchType.LAZY)
     private List<Ficha> fichaList1;
     @JoinColumn(name = "idSucursal", referencedColumnName = "idSucursal")
@@ -213,14 +211,6 @@ public class Usuario implements Serializable {
 
     public void setAsistenciaList(List<Asistencia> asistenciaList) {
         this.asistenciaList = asistenciaList;
-    }
-
-    public List<Ficha> getFichaList() {
-        return fichaList;
-    }
-
-    public void setFichaList(List<Ficha> fichaList) {
-        this.fichaList = fichaList;
     }
 
     public String getUserName() {

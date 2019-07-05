@@ -10,6 +10,7 @@ import cl.ufro.lp2.proyecto.demo.modelo.Pago;
 import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,9 +37,30 @@ public class PagoController {
     }
     
      @PostMapping("/Pago")
-    public String guardarUsuario(@ModelAttribute Pago pag){
+    public String guardarUsuario(@ModelAttribute Pago pag, @ModelAttribute("usuario") Usuario usuarioLogueado){
+        pag.setIdUsuario(usuarioLogueado);
         pDAO.save(pag);
         return "index";
+    }
+    
+    @ModelAttribute("usuario")
+    public Usuario getUsuario(HttpServletRequest request) {
+        // Obtener la sesion
+        HttpSession sesion = request.getSession(false);
+       
+        // Si hay sesion
+        if (sesion != null) {
+            // Obtener objeto de usuario
+            Object objeto = sesion.getAttribute("usuarioLogueado");
+ 
+            // Si el objeto es de tipo UsuarioBase
+            if (objeto instanceof Usuario) {
+                return (Usuario) objeto;
+            }
+        }
+ 
+        // No hay objeto, retornar null
+        return null;
     }
    
     

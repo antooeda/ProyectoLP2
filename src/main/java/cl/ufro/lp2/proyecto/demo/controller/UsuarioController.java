@@ -9,6 +9,8 @@ import cl.ufro.lp2.proyecto.demo.dao.UsuarioDao;
 import cl.ufro.lp2.proyecto.demo.modelo.Sucursal;
 import cl.ufro.lp2.proyecto.demo.modelo.Usuario;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,16 +57,30 @@ public class UsuarioController {
     
      @GetMapping("/Perfil")
     public String cargarSucursal(Model model, @ModelAttribute Usuario us){
-          //model.addAttribute("dato", "Temuco");
-          //model.addAttribute("sucursal", new Sucursal());
-          
-          
-       Usuario pDesplegar = uDAO.findByUserNameAndContraseña(us.getUserName(), us.getContraseña());
-          
-         model.addAttribute("usuario", pDesplegar);
-          //System.out.println("holaaaaa");
-      
+         model.addAttribute("sucursal", new Usuario());
         return "Perfil";
+    }
+    
+    
+    
+    @ModelAttribute("usuario")
+    public Usuario getUsuario(HttpServletRequest request) {
+        // Obtener la sesion
+        HttpSession sesion = request.getSession(false);
+       
+        // Si hay sesion
+        if (sesion != null) {
+            // Obtener objeto de usuario
+            Object objeto = sesion.getAttribute("usuarioLogueado");
+ 
+            // Si el objeto es de tipo UsuarioBase
+            if (objeto instanceof Usuario) {
+                return (Usuario) objeto;
+            }
+        }
+ 
+        // No hay objeto, retornar null
+        return null;
     }
     
     
