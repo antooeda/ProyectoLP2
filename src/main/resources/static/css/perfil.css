@@ -12,6 +12,11 @@ body {
 *::after {
     box-sizing: border-box;
 }
+h1{
+    font-family: fantasy;
+    font-size: 100px;
+    background-color: #FFFFFF;
+}
 
 .container {
     width: 100%;
