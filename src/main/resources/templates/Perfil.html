@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Title</title>
+    <title>Perfil</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="/css/perfil.css">
   </head>
   <body>
+     
       <div class="arrowed">
-          <div class="arrow-6"></div>
+          <div class="arrow-2"></div>
         </div>
       <div class="container" th:each="i:${usuario}">
           <div class="content">
@@ -22,26 +23,28 @@
                       <h1>Mi Perfil</h1>        
                           <img th:src="${i.getUrlImagen()}"  class="card-img-top" alt="...">
                           <p th:text="${i.getNombre()}"></p>
+                          <p th:text="${i.getRut()}"></p>
                           <p th:text="${i.getFechaNacimiento()}"></p>
                       </div>
-                      <button>Reserva Hora</button>
-                      <button>Pagar Mensualidad</button>
+                      <a class="btn submits sign-up" href="reservarHora">Reservar Hora</a>
+                      <a class="btn submits sign-up" href="Pago">Pagar Mensualidad</a>
+                     
                   </div>
                   <div class="profile-right">
                       <div class="box">
                         <span>Mi Estatura: </span>
-                        <p th:text="${i.getEstatura()}"></p>
-                        <span> cm.</span>
+                        <h2 th:text="${i.getEstatura()}"></h2>
+                        <h2> cm.</h2>
                       </div>
                       <div class="box">
                           <span>Porcentaje de Grasa: </span>
-                          <p th:text="${i.getPorcentajeGrasa()}"></p>
-                          <span> %</span>
+                          <h2 th:text="${i.getPorcentajeGrasa()}"></h2>
+                          <h2> %</h2>
                         </div>
                         <div class="box">
                             <span>Porcentaje de Músculo: </span>
-                            <p th:text="${i.getPorcentajeMusculo()}"></p>
-                            <span> %</span>
+                            <h2 th:text="${i.getPorcentajeMusculo()}"></h2>
+                            <h2> %</h2>
                           </div>
                           
                   </div>
