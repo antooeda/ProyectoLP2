@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FF7561
+    
 }
 
 *,
@@ -156,6 +157,7 @@ svg {
     font-size: 1.5em;
     font-weight: 600;
 }
+
 
 /*Keyframes*/
 

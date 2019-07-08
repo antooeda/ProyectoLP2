@@ -102,4 +102,11 @@ public class LoginController {
         
         return "usuario";
     }
+    
+    @GetMapping("/inicio")
+    public String incio(Model model){
+
+        
+        return "redirect:/";
+    }
 }
