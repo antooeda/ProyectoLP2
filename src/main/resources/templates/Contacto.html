@@ -12,41 +12,86 @@
     <script src="/contacto.js"></script>
 </head>
   <body>
-      <a class="btn submits sign-up" href="inicio">>>> Inicio</a>
+     
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
          
-          <a class="navbar-brand" href="/">Inicio</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <a class="navbar-brand" href="/">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link"  href="/Sucursal">Sucursales<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Plan">Planes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="/Clases">Clases Grupales</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Mas...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/loginUsuario">Ingresar</a>
+                <a class="dropdown-item" href="/reservarHora">Reservar Hora</a>
+                <a class="dropdown-item" href="/Contacto">Contacto</a>
+              
+              </div>
+            
+            </li>
+            
         
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link"  href="/Sucursal">Sucursales<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Planes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  href="/Clases">Clases Grupales</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Mas...
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/loginUsuario">Ingresar</a>
-                  <a class="dropdown-item" href="/reservarHora">Reservar Hora</a>
-                  <a class="dropdown-item" href="/Contacto">Contacto</a>
-                  
-                </div>
-              </li>
-            </ul>
-           
-          </div>
-        </nav>
+
+          </ul>
+         
+        </div>
+
+        <th:block th:if="${session.usuarioLogueado==null}">
+                  <li class="nav-item">
+                    <a class="btn submits sign-up" href="loginUsuario">INICIAR SESIÓN
+                      <!--  <a class="btn submits sign-up" href="Pago">PAGAR -->
+                        </a>
+                  </li>
+                 </th:block>
+        
+      
+    <br>
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-bluesky">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+             
+           <th:block th:unless="${session.usuarioLogueado==null}">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" th:text="'Mi Cuenta: '+${session.usuarioLogueado.getUserName()}" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Salir
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form class="usuarioIn" action="logout"  method="post">
+                <a class="dropdown-item" href="/Pago" value="Pagar">Pagar</a>
+                <br>
+                <a class="dropdown-item" href="/reservarHora" value="Pagar">Reservar Hora</a>
+                <br>
+                <a class="dropdown-item" href="/Perfil" value="Pagar">Mi Perfil</a>
+                <br>
+                <input class="dropdown-item"type="submit"  value="Terminar Sesión">
+              </form>
+            </div>
+            </li>
+          </th:block>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+     <br>
         <header>FORMULARIO DE CONTACTO GIMNASIO</header>
 
         <form id="form" class="topBefore">

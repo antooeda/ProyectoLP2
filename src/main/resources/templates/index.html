@@ -67,12 +67,9 @@
                   </li>
                  </th:block>
         
-      </nav>
+      
     <br>
-      <center>
-
-        <iframe width="760" height="515" src="https://www.youtube.com/embed/2WJp-GmhSsw?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </center>
+    
       <nav class="navbar navbar-expand-lg navbar-light bg-bluesky">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -85,22 +82,29 @@
               <a class="nav-link dropdown-toggle" th:text="'Mi Cuenta: '+${session.usuarioLogueado.getUserName()}" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Salir
               </a>
-              <form action="logout"  method="post">
-                <a class="btn submits sign-up" href="/Pago" value="Pagar">Pagar</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form class="usuarioIn" action="logout"  method="post">
+                <a class="dropdown-item" href="/Pago" value="Pagar">Pagar</a>
                 <br>
-                <a class="btn submits sign-up" href="/reservarHora" value="Pagar">Reservar Hora</a>
+                <a class="dropdown-item" href="/reservarHora" value="Pagar">Reservar Hora</a>
                 <br>
-                <a class="btn submits sign-up" href="/Perfil" value="Pagar">Mi Perfil</a>
+                <a class="dropdown-item" href="/Perfil" value="Pagar">Mi Perfil</a>
                 <br>
-                <input class="btn submits sign-up"type="submit"  value="Terminar Sesión">
+                <input class="dropdown-item"type="submit"  value="Terminar Sesión">
               </form>
+            </div>
             </li>
           </th:block>
           </ul>
         </div>
       </nav>
+    </nav>
      <br>
+     <center>
 
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/2WJp-GmhSsw?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    <br>
    
    <center>
       <div class="row carrusel">
