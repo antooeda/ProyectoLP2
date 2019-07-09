@@ -56,8 +56,6 @@ public class Clase implements Serializable {
         @JoinColumn(name = "idUsuario", referencedColumnName = "id_usuario")})
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Usuario> usuarioList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idClase", fetch = FetchType.LAZY)
-    private List<Horario> horarioList;
 
     public Clase() {
     }
@@ -115,13 +113,6 @@ public class Clase implements Serializable {
         this.usuarioList = usuarioList;
     }
 
-    public List<Horario> getHorarioList() {
-        return horarioList;
-    }
-
-    public void setHorarioList(List<Horario> horarioList) {
-        this.horarioList = horarioList;
-    }
 
     @Override
     public int hashCode() {

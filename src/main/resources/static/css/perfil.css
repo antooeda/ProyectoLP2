@@ -158,6 +158,41 @@ svg {
     font-weight: 600;
 }
 
+#msg {
+	width: 400px;
+	height: 80px;
+	background-color: #ef2f83;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	border: 1px solid #111;
+}
+.msg-text {
+	position: absolute; 
+	left: 20px;
+	top: 15px;
+}
+
+#ex-txt {
+	position: absolute;
+	top: 40px;
+	left: 20px;
+}
+
+.close-msg {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	width: 25px;
+	padding-left: 6px;
+}
+.close-msg:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
 
 /*Keyframes*/
 

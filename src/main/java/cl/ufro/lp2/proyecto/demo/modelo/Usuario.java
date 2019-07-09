@@ -80,8 +80,6 @@ public class Usuario implements Serializable {
     @ManyToMany(mappedBy = "usuarioList", fetch = FetchType.LAZY)
     private List<Clase> claseList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario", fetch = FetchType.LAZY)
-    private List<Asistencia> asistenciaList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario", fetch = FetchType.LAZY)
     private List<Ficha> fichaList1;
     @JoinColumn(name = "idSucursal", referencedColumnName = "idSucursal")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -205,13 +203,6 @@ public class Usuario implements Serializable {
         this.claseList = claseList;
     }
 
-    public List<Asistencia> getAsistenciaList() {
-        return asistenciaList;
-    }
-
-    public void setAsistenciaList(List<Asistencia> asistenciaList) {
-        this.asistenciaList = asistenciaList;
-    }
 
     public String getUserName() {
         return userName;
