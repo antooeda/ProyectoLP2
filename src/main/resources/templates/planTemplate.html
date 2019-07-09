@@ -90,10 +90,13 @@
           </div>
         </nav>
       </nav>
-                      <br>
+
+        <br>
                       <h1 th:text="${plan.getNombrePlan()}"></h1>
+                      <h2 th:text="${plan.getValor()}"></h2>
+                      <h5 th:text="${plan.getDescripcion()}"></h5>
                       <br>
-               
+                      <a type="button" class="btn btn-dark" href="/Pago">Pagar</a>
                            
       
     <!-- Optional JavaScript -->

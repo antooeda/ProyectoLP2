@@ -13,14 +13,25 @@
 
   <body>  
         
-    <th:block th:replace="fragments/navbar :: navbar"></th:block>
-       <br>
-       <br>
-    <!--   <h1 th:text="${datosss}"></h1>-->
+    <h1>Nuestras sucursales:</h1>   
+    <br>
+    <div class="card-deck">
+          <div class="card" style="width: 30rem;" th:each="h:${datoos}">
+            <img th:src="${h.getFecha()}"  class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" th:text="${h.getHora()}"></h5>
+              
+              <a href="sucursal" th:href="@{'Sucursal/'+ ${s.getIdSucursal()}}" class="btn btn-dark">Ir a Sucursal</a>
+            </div>
+          </div>
+        </div>
 
-    <!--<form action="#" th:action="@{/crearHorarioForm}" th:object="${horario}" method="POST">-->
-        
-            
+
+    <h1 th:text="${plan.getNombrePlan()}"></h1>
+    <h2 th:text="${plan.getValor()}"></h2>
+    <h5 th:text="${plan.getDescripcion()}"></h5>
+    <br>
+    <a type="button" class="btn btn-dark" href="/Pago">Pagar</a>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
